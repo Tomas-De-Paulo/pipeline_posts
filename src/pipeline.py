@@ -44,8 +44,8 @@ def ejecutar():
         validar_posts(df)
 
         # 5. Exportar
-        parquet_path = output_dir / 'posts_enriquesidos.parquet'
-        csv_path = output_dir / 'posts_enriquesidos.csv'
+        parquet_path = output_dir / 'posts_enriquecidos.parquet'
+        csv_path = output_dir / 'posts_enriquecidos.csv'
 
         df.to_parquet(parquet_path, index=False)
         df.to_csv(csv_path, index=False)
