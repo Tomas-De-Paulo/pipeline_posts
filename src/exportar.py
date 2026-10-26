@@ -12,12 +12,12 @@ def exportar(df: pd.DataFrame, carpeta: str = "output") -> None:
     destino.mkdir(exist_ok=True)
 
     # Formatos planos
-    df.to_parquet(destino / 'posts_enriquesidos.parquet', index=False)
-    df.to_csv(destino / 'post_enriquesidos.csv', index=False)
+    df.to_parquet(destino / 'posts_enriquecidos.parquet', index=False)
+    df.to_csv(destino / 'post_enriquecidos.csv', index=False)
 
     # Tabla para el equipo de BI
     with sqlite3.connect(destino / 'posts.db') as conn:
-        df.to_sql('post_enriquesidos', conn, if_exists='replace', index=False)
+        df.to_sql('post_enriquecidos', conn, if_exists='replace', index=False)
         conn.commit()
 
     logger.info(f"Exportados {len(df)} posts a {destino}/ (parquet, csv, sqlite)")
