@@ -9,7 +9,7 @@ class ValidacionError(Exception):
     """Los datos no pasan las reglas de calidad"""
     pass
 
-def validad_posts(df: pd.DataFrame) -> None:
+def validar_posts(df: pd.DataFrame) -> None:
     """Validar el DataFrame de posts contra reglas de calidad."""
     errores = []
 
